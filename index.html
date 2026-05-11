@@ -25,177 +25,75 @@
       --radius-sm: 10px;
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    /* ── SCREENS ── */
     .screen { display: none; min-height: 100vh; }
     .screen.active { display: block; }
 
-    /* ══════════════════════════════════
-       HOME
-    ══════════════════════════════════ */
-    .home-wrap {
-      max-width: 680px; margin: 0 auto; padding: 40px 20px 60px;
-    }
-    .home-logo {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 1.35rem; font-weight: 800; letter-spacing: -.5px;
-      margin-bottom: 40px;
-    }
-    .logo-icon {
-      width: 40px; height: 40px; background: var(--text); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; color: white;
-    }
-
+    /* HOME */
+    .home-wrap { max-width: 680px; margin: 0 auto; padding: 40px 20px 60px; }
+    .home-logo { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 800; letter-spacing: -.5px; margin-bottom: 40px; }
+    .logo-icon { width: 40px; height: 40px; background: var(--text); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white; }
     .home-hero { margin-bottom: 36px; }
     .home-title { font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
     .home-sub { color: var(--text-mid); font-size: 1rem; line-height: 1.55; max-width: 480px; }
-
     .mode-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px; }
-    .mode-card {
-      background: var(--card); border-radius: var(--radius);
-      padding: 24px 20px; cursor: pointer; border: 2px solid transparent;
-      transition: all .15s; box-shadow: 0 1px 4px rgba(0,0,0,.08);
-    }
+    .mode-card { background: var(--card); border-radius: var(--radius); padding: 24px 20px; cursor: pointer; border: 2px solid transparent; transition: all .15s; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
     .mode-card:hover { border-color: var(--mint); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(62,207,175,.2); }
     .mode-card.featured { background: var(--text); color: white; }
-    .mode-card.featured:hover { border-color: var(--mint); }
     .mode-card-icon { font-size: 2rem; margin-bottom: 10px; }
     .mode-card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
     .mode-card-desc { font-size: .82rem; opacity: .7; line-height: 1.4; }
-
-    .section-label {
-      font-size: .72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--text-muted); margin-bottom: 12px;
-    }
+    .section-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); margin-bottom: 12px; }
     .cat-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-    .cat-tile {
-      background: var(--card); border-radius: var(--radius-sm);
-      padding: 14px 16px; display: flex; align-items: center; gap: 12px;
-      cursor: pointer; border: 1.5px solid transparent;
-      box-shadow: 0 1px 3px rgba(0,0,0,.07); transition: all .15s;
-    }
+    .cat-tile { background: var(--card); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; border: 1.5px solid transparent; box-shadow: 0 1px 3px rgba(0,0,0,.07); transition: all .15s; }
     .cat-tile:hover { border-color: var(--mint); background: var(--mint-light); }
     .cat-tile-icon { font-size: 1.3rem; }
     .cat-tile-name { font-size: .88rem; font-weight: 600; }
     .cat-tile-count { font-size: .75rem; color: var(--text-muted); }
 
-    /* ══════════════════════════════════
-       QUESTION SCREEN (shared)
-    ══════════════════════════════════ */
-    .q-shell {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      background: var(--bg);
-    }
-
-    /* top bar */
-    .q-topbar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 24px;
-      background: var(--bg);
-    }
-    .q-back {
-      background: var(--card); border: none; border-radius: 99px;
-      padding: 7px 16px; font-size: .85rem; font-weight: 600;
-      cursor: pointer; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.1);
-      transition: all .1s;
-    }
+    /* QUESTION SHELL */
+    .q-shell { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); }
+    .q-topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; background: var(--bg); }
+    .q-back { background: var(--card); border: none; border-radius: 99px; padding: 7px 16px; font-size: .85rem; font-weight: 600; cursor: pointer; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.1); transition: all .1s; }
     .q-back:hover { background: #e0e0e0; }
-
-    /* counter badge */
-    .q-counter {
-      background: var(--card); border-radius: 99px;
-      padding: 6px 16px; font-size: .9rem; font-weight: 700;
-      box-shadow: 0 1px 3px rgba(0,0,0,.1);
-      display: flex; align-items: center; gap: 6px;
-    }
-    .q-counter-label { color: var(--text-muted); font-weight: 400; font-size: .82rem; }
-
-    .timer-badge {
-      background: var(--card); border-radius: 99px;
-      padding: 6px 14px; font-size: .9rem; font-weight: 700;
-      box-shadow: 0 1px 3px rgba(0,0,0,.1);
-      font-variant-numeric: tabular-nums;
-      min-width: 70px; text-align: center;
-    }
+    .q-counter { background: var(--card); border-radius: 99px; padding: 6px 16px; font-size: .9rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,.1); display: flex; align-items: center; gap: 6px; }
+    .timer-badge { background: var(--card); border-radius: 99px; padding: 6px 14px; font-size: .9rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,.1); font-variant-numeric: tabular-nums; min-width: 70px; text-align: center; }
     .timer-badge.warn { background: #fff3cd; color: #856404; }
     .timer-badge.danger { background: #fdeaea; color: #c0392b; }
-
-    /* progress */
     .q-progress { height: 4px; background: #ddd; }
     .q-progress-fill { height: 100%; background: var(--mint); transition: width .4s; }
-
-    /* main area */
     .q-body { flex: 1; padding: 28px 24px 120px; max-width: 820px; margin: 0 auto; width: 100%; }
 
-    .q-text {
-      font-size: 1.5rem; font-weight: 800; line-height: 1.35;
-      text-align: center; margin-bottom: 32px; color: var(--text);
-    }
+    /* SIGN ILLUSTRATION */
+    .sign-illustration { display: flex; justify-content: center; margin-bottom: 20px; }
+    .sign-illustration svg { width: 120px; height: 120px; filter: drop-shadow(0 3px 8px rgba(0,0,0,.18)); }
+    .sign-illustration svg.wide { width: 170px; height: 100px; }
+    .sign-illustration svg.road { width: 220px; height: 100px; border-radius: 8px; overflow: hidden; }
 
-    /* two-col layout for image questions (future) / single col */
-    .q-layout { display: flex; gap: 20px; align-items: flex-start; }
-    .q-options { display: flex; flex-direction: column; gap: 10px; flex: 1; }
-
-    .option-btn {
-      background: var(--card); border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm); padding: 16px 20px;
-      text-align: left; cursor: pointer; font-size: .98rem; line-height: 1.4;
-      color: var(--text); transition: all .12s; width: 100%;
-      box-shadow: 0 1px 2px rgba(0,0,0,.05);
-    }
+    .q-text { font-size: 1.5rem; font-weight: 800; line-height: 1.35; text-align: center; margin-bottom: 32px; color: var(--text); }
+    .q-options { display: flex; flex-direction: column; gap: 10px; }
+    .option-btn { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; text-align: left; cursor: pointer; font-size: .98rem; line-height: 1.4; color: var(--text); transition: all .12s; width: 100%; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
     .option-btn:hover:not(.locked) { border-color: #aaa; background: #f8f8f8; }
     .option-btn.selected { border-color: #888; background: #f3f3f3; font-weight: 600; }
     .option-btn.correct { border-color: var(--green); background: var(--green-light); font-weight: 600; color: #1a6640; }
     .option-btn.wrong { border-color: var(--red); background: var(--red-light); font-weight: 600; color: #8b1a1a; }
-    .option-btn.show-correct { border-color: var(--green); background: var(--green-light); font-weight: 600; color: #1a6640; }
     .option-btn.locked { cursor: default; }
-
-    /* feedback box */
-    .q-feedback {
-      margin-top: 16px; padding: 14px 18px; border-radius: var(--radius-sm);
-      font-size: .9rem; line-height: 1.55; display: none;
-    }
+    .q-feedback { margin-top: 16px; padding: 14px 18px; border-radius: var(--radius-sm); font-size: .9rem; line-height: 1.55; display: none; }
     .q-feedback.correct { background: var(--green-light); border-left: 4px solid var(--green); color: #1a5e3a; display: block; }
     .q-feedback.wrong { background: var(--red-light); border-left: 4px solid var(--red); color: #7a1a1a; display: block; }
     .q-feedback strong { display: block; margin-bottom: 3px; }
 
-    /* dot nav (test mode) */
-    .dot-nav {
-      display: flex; flex-wrap: wrap; gap: 6px;
-      justify-content: center; margin-bottom: 24px;
-    }
-    .dot {
-      width: 30px; height: 30px; border-radius: 7px;
-      border: 1.5px solid #ccc; background: var(--card);
-      font-size: .72rem; font-weight: 700; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-muted); transition: all .1s;
-    }
+    /* DOT NAV */
+    .dot-nav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 24px; }
+    .dot { width: 30px; height: 30px; border-radius: 7px; border: 1.5px solid #ccc; background: var(--card); font-size: .72rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all .1s; }
     .dot.answered { background: #d4f0e8; border-color: var(--mint); color: #0e6b55; }
     .dot.current { background: var(--text); border-color: var(--text); color: white; }
 
-    /* bottom nav bar */
-    .q-nav {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      background: var(--bg); border-top: 1px solid #ddd;
-      padding: 14px 24px; display: flex; gap: 10px; justify-content: center;
-      max-width: 820px; margin: 0 auto;
-    }
+    /* BOTTOM NAV */
+    .q-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg); border-top: 1px solid #ddd; padding: 14px 24px; display: flex; justify-content: center; }
     .q-nav-inner { display: flex; gap: 10px; width: 100%; max-width: 500px; }
-    .btn-nav {
-      flex: 1; padding: 13px 20px; border-radius: var(--radius-sm);
-      font-size: .95rem; font-weight: 700; cursor: pointer;
-      border: 2px solid #ddd; background: var(--card); color: var(--text);
-      transition: all .12s;
-    }
+    .btn-nav { flex: 1; padding: 13px 20px; border-radius: var(--radius-sm); font-size: .95rem; font-weight: 700; cursor: pointer; border: 2px solid #ddd; background: var(--card); color: var(--text); transition: all .12s; }
     .btn-nav:hover { background: #f0f0f0; }
     .btn-nav.primary { background: var(--mint); border-color: var(--mint); color: white; }
     .btn-nav.primary:hover { background: var(--mint-dark); border-color: var(--mint-dark); }
@@ -203,21 +101,34 @@
     .btn-nav.ghost { color: var(--text-muted); border-color: #e0e0e0; }
     .btn-nav.ghost:hover { color: var(--text); border-color: #aaa; }
 
-    /* ══════════════════════════════════
-       RESULTS
-    ══════════════════════════════════ */
-    .results-wrap { max-width: 680px; margin: 0 auto; padding: 40px 20px 60px; }
+    /* PRACTICE RESULTS */
+    .prac-results-wrap { max-width: 500px; margin: 0 auto; padding: 40px 24px 60px; }
+    .prac-score-ring { display: flex; flex-direction: column; align-items: center; margin: 32px 0 28px; }
+    .ring-svg { width: 150px; height: 150px; }
+    .ring-label { font-size: 2.2rem; font-weight: 900; margin-top: -4px; }
+    .ring-sub { font-size: .9rem; color: var(--text-muted); }
+    .prac-msg { background: var(--card); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .prac-msg-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+    .prac-msg-body { color: var(--text-mid); font-size: .92rem; line-height: 1.55; }
+    .prac-bar-wrap { margin: 6px 0 20px; }
+    .prac-bar-row { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: 5px; font-weight: 600; }
+    .prac-bar { height: 12px; background: #eee; border-radius: 99px; overflow: hidden; }
+    .prac-bar-fill { height: 100%; border-radius: 99px; transition: width .8s; }
+    .prac-bar-fill.green { background: var(--green); }
+    .prac-bar-fill.red { background: var(--red); }
+    .prac-actions { display: flex; flex-direction: column; gap: 10px; }
+    .btn-prac { padding: 14px 20px; border-radius: var(--radius-sm); font-size: .95rem; font-weight: 700; cursor: pointer; border: 2px solid; transition: all .12s; text-align: center; }
+    .btn-prac.primary { background: var(--mint); border-color: var(--mint); color: white; }
+    .btn-prac.primary:hover { background: var(--mint-dark); }
+    .btn-prac.secondary { background: var(--card); border-color: #ddd; color: var(--text); }
+    .btn-prac.secondary:hover { background: #f0f0f0; }
 
-    .results-score-card {
-      background: var(--card); border-radius: var(--radius);
-      padding: 32px 28px; margin-bottom: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,.08);
-    }
+    /* FULL RESULTS */
+    .results-wrap { max-width: 680px; margin: 0 auto; padding: 40px 20px 60px; }
+    .results-score-card { background: var(--card); border-radius: var(--radius); padding: 32px 28px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
     .results-headline { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
     .results-sub { color: var(--text-mid); font-size: .95rem; line-height: 1.55; max-width: 520px; margin-bottom: 24px; }
-
     .score-bars { display: flex; flex-direction: column; gap: 14px; }
-    .score-row { }
     .score-row-top { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: .85rem; }
     .score-row-label { font-weight: 700; }
     .score-row-note { color: var(--text-muted); }
@@ -225,36 +136,16 @@
     .score-bar-fill { height: 100%; border-radius: 99px; transition: width .6s; }
     .score-bar-fill.green { background: var(--green); }
     .score-bar-fill.red { background: var(--red); }
-
-    /* wrong list */
-    .result-section {
-      background: var(--card); border-radius: var(--radius);
-      padding: 24px 24px; margin-bottom: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,.08);
-    }
-    .result-section-head {
-      display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
-    }
-    .result-section-icon {
-      width: 42px; height: 42px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-    }
+    .result-section { background: var(--card); border-radius: var(--radius); padding: 24px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .result-section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .result-section-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
     .result-section-icon.red { background: var(--red-light); }
     .result-section-icon.green { background: var(--green-light); }
     .result-section-title { font-size: 1.1rem; font-weight: 800; }
-
-    .wrong-list { display: flex; flex-direction: column; }
-    .wrong-item {
-      padding: 14px 0; border-bottom: 1px solid #f0f0f0;
-    }
+    .wrong-item { padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
     .wrong-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .wrong-toggle {
-      display: flex; align-items: flex-start; gap: 8px;
-      cursor: pointer; background: none; border: none;
-      text-align: left; width: 100%; color: var(--text); font-size: .9rem;
-    }
+    .wrong-toggle { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; background: none; border: none; text-align: left; width: 100%; color: var(--text); font-size: .9rem; }
     .wrong-toggle-icon { color: #3b82f6; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .wrong-toggle-q { font-weight: 500; }
     .wrong-detail { display: none; padding: 10px 0 0 18px; }
     .wrong-detail.open { display: block; }
     .wrong-detail-line { font-size: .84rem; margin-bottom: 4px; color: var(--text-mid); }
@@ -262,21 +153,13 @@
     .wrong-detail-line .val-wrong { color: var(--red); }
     .wrong-detail-line .val-right { color: var(--green); }
     .wrong-exp { font-size: .83rem; color: var(--text-muted); margin-top: 6px; font-style: italic; }
-
     .result-actions { display: flex; gap: 12px; margin-bottom: 24px; }
-    .btn-result {
-      flex: 1; padding: 14px 20px; border-radius: var(--radius-sm);
-      font-size: .95rem; font-weight: 700; cursor: pointer; border: 2px solid;
-      transition: all .12s;
-    }
+    .btn-result { flex: 1; padding: 14px 20px; border-radius: var(--radius-sm); font-size: .95rem; font-weight: 700; cursor: pointer; border: 2px solid; transition: all .12s; }
     .btn-result.primary { background: var(--mint); border-color: var(--mint); color: white; }
     .btn-result.primary:hover { background: var(--mint-dark); }
     .btn-result.secondary { background: var(--card); border-color: #ddd; color: var(--text); }
     .btn-result.secondary:hover { background: #f0f0f0; }
 
-    /* ══════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════ */
     @media (max-width: 480px) {
       .mode-cards { grid-template-columns: 1fr; }
       .q-text { font-size: 1.2rem; margin-bottom: 20px; }
@@ -284,33 +167,35 @@
       .q-topbar { padding: 12px 16px; }
       .home-title { font-size: 1.7rem; }
       .results-wrap { padding: 24px 16px 60px; }
+      .sign-illustration svg { width: 90px; height: 90px; }
+      .sign-illustration svg.wide { width: 130px; height: 76px; }
+      .sign-illustration svg.road { width: 180px; height: 80px; }
     }
 
-    /* fade animation */
     @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
     .fade-up { animation: fadeUp .22s ease; }
+    @keyframes scaleIn { from { opacity:0; transform:scale(.85); } to { opacity:1; transform:scale(1); } }
+    .scale-in { animation: scaleIn .35s cubic-bezier(.34,1.56,.64,1); }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════ HOME ══════════════════════════ -->
+<!-- HOME -->
 <div id="screen-home" class="screen active">
   <div class="home-wrap">
     <div class="home-logo">
       <div class="logo-icon">🚗</div>
       <span>Klasse B <span style="font-weight:400">teorioppgaver</span></span>
     </div>
-
     <div class="home-hero">
       <h1 class="home-title">Øv til klasse B-prøven</h1>
       <p class="home-sub">62 spørsmål fordelt på alle offisielle kategorier. Øv etter tema eller ta en full simulert tentamen på 45 spørsmål og 90 minutter.</p>
     </div>
-
     <div class="mode-cards">
       <div class="mode-card featured" onclick="showCatSelect()">
         <div class="mode-card-icon">📚</div>
         <div class="mode-card-title">Øv etter tema</div>
-        <div class="mode-card-desc">Velg kategori og få tilbakemelding umiddelbart etter hvert svar</div>
+        <div class="mode-card-desc">Velg kategori og få tilbakemelding etter hvert svar</div>
       </div>
       <div class="mode-card" onclick="startFullTest()">
         <div class="mode-card-icon">📝</div>
@@ -318,13 +203,12 @@
         <div class="mode-card-desc">45 spørsmål · 90 min · som den ekte teoriprøven</div>
       </div>
     </div>
-
     <div class="section-label">Kategorier</div>
     <div class="cat-tiles" id="home-cats"></div>
   </div>
 </div>
 
-<!-- ══════════════════════════ CAT SELECT ══════════════════════════ -->
+<!-- CAT SELECT -->
 <div id="screen-catselect" class="screen">
   <div class="home-wrap">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:32px">
@@ -338,7 +222,7 @@
   </div>
 </div>
 
-<!-- ══════════════════════════ PRACTICE ══════════════════════════ -->
+<!-- PRACTICE -->
 <div id="screen-practice" class="screen">
   <div class="q-shell">
     <div class="q-topbar">
@@ -351,15 +235,12 @@
       <div style="width:80px"></div>
     </div>
     <div class="q-progress"><div class="q-progress-fill" id="prac-bar" style="width:0%"></div></div>
-
     <div class="q-body">
+      <div class="sign-illustration" id="prac-sign" style="display:none"></div>
       <div class="q-text fade-up" id="prac-question"></div>
-      <div class="q-layout">
-        <div class="q-options" id="prac-options"></div>
-      </div>
+      <div class="q-options" id="prac-options"></div>
       <div class="q-feedback" id="prac-feedback"></div>
     </div>
-
     <div class="q-nav">
       <div class="q-nav-inner">
         <button class="btn-nav ghost" id="prac-skip" onclick="pracSkip()">Hopp over</button>
@@ -370,7 +251,42 @@
   </div>
 </div>
 
-<!-- ══════════════════════════ TEST ══════════════════════════ -->
+<!-- PRACTICE RESULTS -->
+<div id="screen-prac-results" class="screen">
+  <div class="q-shell">
+    <div class="q-topbar">
+      <div style="width:80px"></div>
+      <div class="q-counter" id="pr-counter"></div>
+      <div style="width:80px"></div>
+    </div>
+    <div class="q-body" style="padding-bottom:40px">
+      <div class="prac-results-wrap">
+        <div style="text-align:center;margin-bottom:8px;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)" id="pr-cat-name"></div>
+        <div class="prac-score-ring">
+          <svg class="ring-svg scale-in" viewBox="0 0 150 150" id="pr-ring"></svg>
+          <div class="ring-label" id="pr-score-label"></div>
+          <div class="ring-sub" id="pr-score-sub"></div>
+        </div>
+        <div class="prac-msg" id="pr-msg"></div>
+        <div class="prac-bar-wrap">
+          <div class="prac-bar-row"><span id="pr-correct-label"></span><span style="color:var(--text-muted)" id="pr-correct-note"></span></div>
+          <div class="prac-bar"><div class="prac-bar-fill green" id="pr-bar-correct"></div></div>
+        </div>
+        <div class="prac-bar-wrap">
+          <div class="prac-bar-row"><span id="pr-wrong-label"></span></div>
+          <div class="prac-bar"><div class="prac-bar-fill red" id="pr-bar-wrong"></div></div>
+        </div>
+        <div class="prac-actions">
+          <button class="btn-prac primary" id="pr-retry">Prøv igjen</button>
+          <button class="btn-prac secondary" onclick="showScreen('catselect')">Tilbake til kategorier</button>
+          <button class="btn-prac secondary" onclick="showScreen('home')">🏠 Hjem</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEST -->
 <div id="screen-test" class="screen">
   <div class="q-shell">
     <div class="q-topbar">
@@ -383,15 +299,12 @@
       <div class="timer-badge" id="test-timer">90:00</div>
     </div>
     <div class="q-progress"><div class="q-progress-fill" id="test-bar" style="width:0%"></div></div>
-
     <div class="q-body">
       <div class="dot-nav" id="test-dots"></div>
+      <div class="sign-illustration" id="test-sign" style="display:none"></div>
       <div class="q-text fade-up" id="test-question"></div>
-      <div class="q-layout">
-        <div class="q-options" id="test-options"></div>
-      </div>
+      <div class="q-options" id="test-options"></div>
     </div>
-
     <div class="q-nav">
       <div class="q-nav-inner">
         <button class="btn-nav ghost" id="test-prev" onclick="testNav(-1)">← Forrige</button>
@@ -402,7 +315,7 @@
   </div>
 </div>
 
-<!-- ══════════════════════════ RESULTS ══════════════════════════ -->
+<!-- FULL RESULTS -->
 <div id="screen-results" class="screen">
   <div class="results-wrap">
     <div class="results-score-card">
@@ -410,12 +323,10 @@
       <div class="results-sub" id="res-sub"></div>
       <div class="score-bars" id="res-bars"></div>
     </div>
-
     <div class="result-actions">
       <button class="btn-result secondary" onclick="showScreen('home')">🏠 Hjem</button>
       <button class="btn-result primary" id="res-retry">Prøv igjen</button>
     </div>
-
     <div class="result-section" id="res-wrong-section">
       <div class="result-section-head">
         <div class="result-section-icon red">✗</div>
@@ -423,7 +334,6 @@
       </div>
       <div class="wrong-list" id="res-wrong-list"></div>
     </div>
-
     <div class="result-section" id="res-right-section" style="display:none">
       <div class="result-section-head">
         <div class="result-section-icon green">✓</div>
@@ -435,6 +345,77 @@
 </div>
 
 <script>
+// ══════════════════════════════════════════════════
+// SVG SIGN ILLUSTRATIONS
+// ══════════════════════════════════════════════════
+const SIGNS = {
+  forbud: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="46" fill="white" stroke="#D32F2F" stroke-width="9"/>
+    <text x="50" y="64" text-anchor="middle" fill="#D32F2F" font-size="36" font-weight="900" font-family="Arial,sans-serif">50</text>
+  </svg>`,
+
+  advarsel: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="50,7 95,88 5,88" fill="#FFD600" stroke="#D32F2F" stroke-width="6" stroke-linejoin="round"/>
+    <text x="50" y="83" text-anchor="middle" fill="#111" font-size="46" font-weight="900" font-family="Arial,sans-serif">!</text>
+  </svg>`,
+
+  pabud: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="46" fill="#1565C0"/>
+    <polygon points="28,50 55,26 55,40 72,40 72,60 55,60 55,74" fill="white"/>
+  </svg>`,
+
+  forkjors: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="14" y="14" width="72" height="72" rx="3" fill="#FFD600" stroke="#B8860B" stroke-width="3" transform="rotate(45,50,50)"/>
+    <rect x="24" y="24" width="52" height="52" rx="2" fill="white" transform="rotate(45,50,50)"/>
+  </svg>`,
+
+  stopp: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" fill="#C62828"/>
+    <text x="50" y="58" text-anchor="middle" fill="white" font-size="19" font-weight="900" font-family="Arial,sans-serif" letter-spacing="0.5">STOPP</text>
+  </svg>`,
+
+  vikeplikt: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="50,88 5,12 95,12" fill="white" stroke="#D32F2F" stroke-width="7" stroke-linejoin="round"/>
+    <polygon points="50,76 14,20 86,20" fill="red" opacity="0.08"/>
+    <text x="50" y="55" text-anchor="middle" fill="#D32F2F" font-size="14" font-weight="900" font-family="Arial,sans-serif">VIK</text>
+  </svg>`,
+
+  motorvei: `<svg class="wide" viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="160" height="100" rx="10" fill="#1565C0"/>
+    <rect x="18" y="20" width="52" height="60" rx="3" fill="white"/>
+    <rect x="90" y="20" width="52" height="60" rx="3" fill="white"/>
+    <rect x="74" y="20" width="12" height="60" rx="2" fill="#1565C0"/>
+    <rect x="18" y="56" width="52" height="3" fill="#1565C0"/>
+    <rect x="90" y="56" width="52" height="3" fill="#1565C0"/>
+    <path d="M30 75 Q44 45 56 75" stroke="#1565C0" stroke-width="3" fill="none"/>
+    <path d="M102 75 Q116 45 128 75" stroke="#1565C0" stroke-width="3" fill="none"/>
+  </svg>`,
+
+  stiplet: `<svg class="road" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg">
+    <rect width="220" height="90" fill="#6b7280"/>
+    <line x1="0" y1="12" x2="220" y2="12" stroke="#e5e7eb" stroke-width="3"/>
+    <line x1="0" y1="78" x2="220" y2="78" stroke="#e5e7eb" stroke-width="3"/>
+    <line x1="0" y1="45" x2="220" y2="45" stroke="white" stroke-width="4" stroke-dasharray="28,18"/>
+  </svg>`,
+
+  heltrukken: `<svg class="road" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg">
+    <rect width="220" height="90" fill="#6b7280"/>
+    <line x1="0" y1="12" x2="220" y2="12" stroke="#e5e7eb" stroke-width="3"/>
+    <line x1="0" y1="78" x2="220" y2="78" stroke="#e5e7eb" stroke-width="3"/>
+    <line x1="0" y1="41" x2="220" y2="41" stroke="white" stroke-width="4"/>
+    <line x1="0" y1="49" x2="220" y2="49" stroke="white" stroke-width="4"/>
+  </svg>`,
+
+  gulkant: `<svg class="road" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg">
+    <rect width="220" height="90" fill="#9ca3af"/>
+    <rect x="0" y="0" width="40" height="90" fill="#d1d5db"/>
+    <line x1="40" y1="0" x2="40" y2="90" stroke="#FFD600" stroke-width="5"/>
+    <rect x="40" y="0" width="180" height="90" fill="#6b7280"/>
+    <line x1="0" y1="12" x2="220" y2="12" stroke="transparent"/>
+    <line x1="130" y1="0" x2="130" y2="90" stroke="white" stroke-width="3" stroke-dasharray="24,14"/>
+  </svg>`,
+};
+
 // ══════════════════════════════════════════════════
 // DATA
 // ══════════════════════════════════════════════════
@@ -486,16 +467,16 @@ const QS = [
   {id:30,cat:'fart',q:'Hva er minimumsavstanden du skal holde fra et kryss når du parkerer?',o:['3 meter','5 meter','10 meter','15 meter'],a:1,e:'Du skal ikke stanse eller parkere nærmere enn 5 meter fra et kryss.'},
 
   // ── SKILT OG OPPMERKING ──
-  {id:31,cat:'skilt',q:'Hva kjennetegner et forbudsskilt?',o:['Blå sirkel','Rød trekant','Rød sirkel med hvit bakgrunn','Gult rektangel'],a:2,e:'Forbudsskilt er runde med rød kant på hvit bakgrunn. De forbyr noe.'},
-  {id:32,cat:'skilt',q:'Hva kjennetegner et advarselsskilt (fareskilt)?',o:['Blå sirkel','Rød trekant med gul/hvit bakgrunn','Rød sirkel','Gult rektangel'],a:1,e:'Advarselsskilt er trekantformet med rød kant og gul eller hvit bakgrunn. De varsler om fare.'},
-  {id:33,cat:'skilt',q:'Hva kjennetegner et påbudsskilt?',o:['Rød sirkel','Rød trekant','Blå sirkel','Gul rombe'],a:2,e:'Påbudsskilt er runde og blå. De påbyr noe, for eksempel obligatorisk kjøreretning.'},
-  {id:34,cat:'skilt',q:'Hva betyr et gult diamantformet (rombeformet) skilt?',o:['Advarsel om farlig vei','Du kjører på forkjørsvei og har forkjørsrett','Parkering tillatt','Fartsgrense opphevet'],a:1,e:'Gult diamantskilt betyr at du kjører på forkjørsvei og har forkjørsrett i kryss.'},
-  {id:35,cat:'skilt',q:'Hva betyr en stiplet (brutt) hvit midtlinje?',o:['Forbikjøring er forbudt','Forbikjøring er tillatt når det ellers er trygt og lovlig','Du er på motorvei','Veien smalner inn'],a:1,e:'Stiplet midtlinje betyr at forbikjøring er tillatt, forutsatt at det ellers er lovlig og trygt.'},
-  {id:36,cat:'skilt',q:'Hva betyr en dobbel heltrukket hvit midtlinje?',o:['Forbikjøring er tillatt fra begge sider','Forbikjøring er forbudt fra begge sider','Midtrabatt begynner','Du nærmer deg rundkjøring'],a:1,e:'Dobbel heltrukken midtlinje betyr at det er forbudt å krysse eller kjøre forbi fra begge sider.'},
-  {id:37,cat:'skilt',q:'Hva er formen på et stoppskilt?',o:['Rundt og rødt','Trekantformet','Åttekantformet med hvit STOPP-tekst','Kvadratisk og blått'],a:2,e:'Stoppskilt er åttekantformet (oktagon), rødt med hvit STOPP-tekst. Du plikter å stoppe.'},
-  {id:38,cat:'skilt',q:'Hva betyr det omvendte trekantformede skiltet (spissen ned)?',o:['Du har forkjørsrett','Forkjørsvei slutter','Du plikter å vike for all trafikk i krysset','Farlig kurve'],a:2,e:'Vikepliktsskilt (omvendt trekant) betyr at du plikter å vike for all trafikk i det kommende krysset.'},
-  {id:39,cat:'skilt',q:'Hva betyr heltrukne (ubrutte) gule kantlinjer langs veikanten?',o:['Parkering er tillatt','Stans og parkering er forbudt','Fartsgrense 30 km/t','Motorvei starter'],a:1,e:'Heltrukne gule kantlinjer betyr at stans og parkering er forbudt langs denne siden.'},
-  {id:40,cat:'skilt',q:'Hva markerer et blått rektangulært motorveiskilt?',o:['Motorvei begynner – særskilte motorveiregler gjelder','Fartsgrense 120 km/t','Lastebiler er forbudt','Betalingsvei'],a:0,e:'Motorveiskilt markerer at motorvei begynner. Særregler gjelder: ingen plan-kryss, forbud mot snu/rygg.'},
+  {id:31,cat:'skilt',sign:'forbud',q:'Hva kjennetegner et forbudsskilt?',o:['Blå sirkel','Rød trekant','Rød sirkel med hvit bakgrunn','Gult rektangel'],a:2,e:'Forbudsskilt er runde med rød kant på hvit bakgrunn. De forbyr noe (f.eks. fartsgrense).'},
+  {id:32,cat:'skilt',sign:'advarsel',q:'Hva kjennetegner et advarselsskilt (fareskilt)?',o:['Blå sirkel','Rød trekant med gul/hvit bakgrunn','Rød sirkel','Gult rektangel'],a:1,e:'Advarselsskilt er trekantformet med rød kant og gul eller hvit bakgrunn. De varsler om fare.'},
+  {id:33,cat:'skilt',sign:'pabud',q:'Hva kjennetegner et påbudsskilt?',o:['Rød sirkel','Rød trekant','Blå sirkel','Gul rombe'],a:2,e:'Påbudsskilt er runde og blå. De påbyr noe, for eksempel obligatorisk kjøreretning.'},
+  {id:34,cat:'skilt',sign:'forkjors',q:'Hva betyr et gult diamantformet (rombeformet) skilt?',o:['Advarsel om farlig vei','Du kjører på forkjørsvei og har forkjørsrett','Parkering tillatt','Fartsgrense opphevet'],a:1,e:'Gult diamantskilt betyr at du kjører på forkjørsvei og har forkjørsrett i kryss.'},
+  {id:35,cat:'skilt',sign:'stiplet',q:'Hva betyr en stiplet (brutt) hvit midtlinje?',o:['Forbikjøring er forbudt','Forbikjøring er tillatt når det ellers er trygt og lovlig','Du er på motorvei','Veien smalner inn'],a:1,e:'Stiplet midtlinje betyr at forbikjøring er tillatt, forutsatt at det ellers er lovlig og trygt.'},
+  {id:36,cat:'skilt',sign:'heltrukken',q:'Hva betyr en dobbel heltrukket hvit midtlinje?',o:['Forbikjøring er tillatt fra begge sider','Forbikjøring er forbudt fra begge sider','Midtrabatt begynner','Du nærmer deg rundkjøring'],a:1,e:'Dobbel heltrukken midtlinje betyr at det er forbudt å krysse eller kjøre forbi fra begge sider.'},
+  {id:37,cat:'skilt',sign:'stopp',q:'Hva er formen på et stoppskilt?',o:['Rundt og rødt','Trekantformet','Åttekantformet med hvit STOPP-tekst','Kvadratisk og blått'],a:2,e:'Stoppskilt er åttekantformet (oktagon), rødt med hvit STOPP-tekst. Du plikter å stoppe.'},
+  {id:38,cat:'skilt',sign:'vikeplikt',q:'Hva betyr det omvendte trekantformede skiltet (spissen ned)?',o:['Du har forkjørsrett','Forkjørsvei slutter','Du plikter å vike for all trafikk i krysset','Farlig kurve'],a:2,e:'Vikepliktsskilt (omvendt trekant) betyr at du plikter å vike for all trafikk i det kommende krysset.'},
+  {id:39,cat:'skilt',sign:'gulkant',q:'Hva betyr heltrukne (ubrutte) gule kantlinjer langs veikanten?',o:['Parkering er tillatt','Stans og parkering er forbudt','Fartsgrense 30 km/t','Motorvei starter'],a:1,e:'Heltrukne gule kantlinjer betyr at stans og parkering er forbudt langs denne siden.'},
+  {id:40,cat:'skilt',sign:'motorvei',q:'Hva markerer et blått rektangulært motorveiskilt?',o:['Motorvei begynner – særskilte motorveiregler gjelder','Fartsgrense 120 km/t','Lastebiler er forbudt','Betalingsvei'],a:0,e:'Motorveiskilt markerer at motorvei begynner. Særregler gjelder: ingen plan-kryss, forbud mot snu/rygg.'},
 
   // ── KJØRETØYET ──
   {id:41,cat:'kjoretoyet',q:'Hva er lovpålagt minimum mønsterdybde for dekk på personbil?',o:['0,5 mm','1,6 mm','3 mm','5 mm'],a:1,e:'Lovpålagt minimum mønsterdybde for alle dekk er 1,6 mm.'},
@@ -507,7 +488,7 @@ const QS = [
   {id:47,cat:'kjoretoyet',q:'Hva er regelen for vinterdekk i Norge?',o:['Vinterdekk er påbudt fra 1. november til 1. april','Kjøretøyet skal ha egnede dekk etter vei- og føreforholdene','Vinterdekk er alltid valgfritt','Piggdekk er alltid tillatt hele året'],a:1,e:'Det finnes ingen fast dategrense – kjøretøyet skal ha dekk tilpasset vei- og føreforholdene.'},
   {id:48,cat:'kjoretoyet',q:'Hva bør du sjekke jevnlig for å sikre at bilen er trafikksikker?',o:['Bare dekktrykket','Bare bremsene','Dekk, lys, bremser, speil og væskenivåer','Bare at motoren starter'],a:2,e:'Regelmessig sjekk av dekk, lys, bremser, speil og væskenivåer er viktig for trafikksikkerheten.'},
 
-  // ── FØRER OG ANDRE TRAFIKANTER ──
+  // ── FØRER OG TRAFIKANTER ──
   {id:49,cat:'forer',q:'Hva er regelen for bilbelte i Norge?',o:['Bare sjåføren plikter å bruke belte','Alle i bilen plikter å bruke bilbelte','Bilbelte er frivillig for voksne','Bare påbudt på motorvei'],a:1,e:'Alle i bilen plikter å bruke bilbelte. Sjåføren er ansvarlig for at barn under 15 år bruker riktig sikringsutstyr.'},
   {id:50,cat:'forer',q:'Hva er regelen for barn som reiser i bil?',o:['Barn over 3 år trenger ikke beltestol','Barn skal bruke godkjent sikringsutstyr tilpasset vekt og størrelse','Bare setebeltet er nødvendig','Barn kan sitte i front uten restriksjoner'],a:1,e:'Barn skal alltid bruke godkjent bilstol eller setebelteforsterker tilpasset barnets vekt og størrelse.'},
   {id:51,cat:'forer',q:'Hva bør du gjøre ved møte med en hest på veien?',o:['Kjøre forbi raskt','Bruke hornet for å varsle','Senke farten, passere forsiktig og om nødvendig stoppe og slå av motoren','Blinke med lysene'],a:2,e:'Hester kan lett skremmes av biler. Passér forsiktig og sakte — stopp og slå av motoren om nødvendig.'},
@@ -545,8 +526,6 @@ function showScreen(id) {
 // HOME INIT
 // ══════════════════════════════════════════════════
 (function init() {
-  const homeCats = document.getElementById('home-cats');
-  const catGrid = document.getElementById('catselect-grid');
   const html = Object.entries(CATS).map(([k,c]) => {
     const n = QS.filter(q => q.cat === k).length;
     return `<div class="cat-tile" onclick="startPractice('${k}')">
@@ -554,18 +533,32 @@ function showScreen(id) {
       <div><div class="cat-tile-name">${c.name}</div><div class="cat-tile-count">${n} spørsmål</div></div>
     </div>`;
   }).join('');
-  homeCats.innerHTML = html;
-  catGrid.innerHTML = html;
+  document.getElementById('home-cats').innerHTML = html;
+  document.getElementById('catselect-grid').innerHTML = html;
 })();
 
 function showCatSelect() { showScreen('catselect'); }
+
+// ══════════════════════════════════════════════════
+// SIGN RENDERING
+// ══════════════════════════════════════════════════
+function renderSign(signKey, elId) {
+  const el = document.getElementById(elId);
+  if (signKey && SIGNS[signKey]) {
+    el.innerHTML = SIGNS[signKey];
+    el.style.display = 'flex';
+  } else {
+    el.style.display = 'none';
+    el.innerHTML = '';
+  }
+}
 
 // ══════════════════════════════════════════════════
 // PRACTICE
 // ══════════════════════════════════════════════════
 function startPractice(catKey) {
   const qs = shuffle(QS.filter(q => q.cat === catKey));
-  prac = { qs, idx: 0, checked: false };
+  prac = { qs, idx: 0, checked: false, correct: 0, catKey };
   showScreen('practice');
   renderPrac();
 }
@@ -575,10 +568,13 @@ function renderPrac() {
   const q = qs[idx];
   const total = qs.length;
   prac.checked = false;
+  pracSelected = null;
 
   document.getElementById('prac-num').textContent = idx + 1;
   document.getElementById('prac-total').textContent = total;
   document.getElementById('prac-bar').style.width = `${(idx / total) * 100}%`;
+
+  renderSign(q.sign, 'prac-sign');
 
   const qEl = document.getElementById('prac-question');
   qEl.textContent = q.q;
@@ -598,7 +594,7 @@ function renderPrac() {
   document.getElementById('prac-check').style.display = '';
   document.getElementById('prac-next').style.display = 'none';
   document.getElementById('prac-skip').style.display = '';
-  document.getElementById('prac-next').textContent = idx + 1 === total ? 'Ferdig ✓' : 'Neste →';
+  document.getElementById('prac-next').textContent = idx + 1 === total ? 'Se resultat →' : 'Neste →';
 }
 
 let pracSelected = null;
@@ -615,6 +611,7 @@ function pracCheck() {
   prac.checked = true;
   const q = prac.qs[prac.idx];
   const correct = pracSelected === q.a;
+  if (correct) prac.correct++;
 
   document.querySelectorAll('.option-btn').forEach((b, i) => {
     b.classList.add('locked');
@@ -633,17 +630,65 @@ function pracCheck() {
 }
 
 function pracSkip() {
-  pracSelected = null;
+  const total = prac.qs.length;
   prac.idx++;
-  if (prac.idx >= prac.qs.length) { showScreen('catselect'); return; }
+  if (prac.idx >= total) { showPracResults(); return; }
+  pracSelected = null;
   renderPrac();
 }
 
 function pracNext() {
+  const total = prac.qs.length;
   prac.idx++;
-  if (prac.idx >= prac.qs.length) { showScreen('catselect'); return; }
+  if (prac.idx >= total) { showPracResults(); return; }
   pracSelected = null;
   renderPrac();
+}
+
+function showPracResults() {
+  const { qs, correct, catKey } = prac;
+  const total = qs.length;
+  const pct = Math.round((correct / total) * 100);
+  const cat = CATS[catKey];
+
+  showScreen('prac-results');
+
+  document.getElementById('pr-cat-name').textContent = cat.icon + ' ' + cat.name;
+  document.getElementById('pr-counter').innerHTML =
+    `<span>${correct}</span><span style="color:#ccc"> / </span><span style="color:var(--text-muted)">${total}</span>`;
+
+  // ring
+  const radius = 58, cx = 75, cy = 75, circ = 2 * Math.PI * radius;
+  const fill = (correct / total) * circ;
+  const color = pct >= 85 ? '#3db87a' : pct >= 60 ? '#f59e0b' : '#e05c5c';
+  document.getElementById('pr-ring').innerHTML = `
+    <circle cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+    <circle cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="${color}" stroke-width="12"
+      stroke-dasharray="${fill} ${circ}" stroke-dashoffset="${circ / 4}"
+      stroke-linecap="round" transform="rotate(-90,${cx},${cy})"/>
+    <text x="${cx}" y="${cy - 6}" text-anchor="middle" fill="#1a1a1a" font-size="22" font-weight="900" font-family="Arial,sans-serif">${pct}%</text>
+    <text x="${cx}" y="${cy + 16}" text-anchor="middle" fill="#888" font-size="11" font-family="Arial,sans-serif">${correct} av ${total}</text>`;
+
+  document.getElementById('pr-score-label').textContent = `${correct} av ${total} riktige`;
+  document.getElementById('pr-score-sub').textContent = `${pct}% riktige svar`;
+
+  const msgs = [
+    { min:90, title:'Utmerket! 🏆', body:'Du behersker denne kategorien svært godt. Hold det nivået!' },
+    { min:75, title:'Bra jobbet! 👍', body:'Du er på rett vei. Noen flere runder og du sitter trygt på dette.' },
+    { min:50, title:'Godt forsøk 🙂', body:'Du er i gang, men har en vei å gå. Prøv igjen og fokuser på de spørsmålene du bommet på.' },
+    { min:0,  title:'Her er det å øve! 📖', body:'Ikke gi opp — les igjennom forklaringene for hvert svar og prøv igjen. Du blir bedre for hvert forsøk.' },
+  ];
+  const msg = msgs.find(m => pct >= m.min);
+  document.getElementById('pr-msg').innerHTML =
+    `<div class="prac-msg-title">${msg.title}</div><div class="prac-msg-body">${msg.body}</div>`;
+
+  document.getElementById('pr-correct-label').textContent = `${correct} riktige`;
+  document.getElementById('pr-correct-note').textContent = `av ${total}`;
+  document.getElementById('pr-bar-correct').style.width = `${(correct/total)*100}%`;
+  document.getElementById('pr-wrong-label').textContent = `${total - correct} feil`;
+  document.getElementById('pr-bar-wrong').style.width = `${((total-correct)/total)*100}%`;
+
+  document.getElementById('pr-retry').onclick = () => startPractice(catKey);
 }
 
 // ══════════════════════════════════════════════════
@@ -654,9 +699,7 @@ function startFullTest() {
   test = {
     qs: shuffle([...QS]).slice(0, 45),
     answers: new Array(45).fill(null),
-    idx: 0,
-    timeLeft: 90 * 60,
-    timer: null,
+    idx: 0, timeLeft: 90 * 60, timer: null,
   };
   test.timer = setInterval(testTick, 1000);
   showScreen('test');
@@ -683,32 +726,26 @@ function testTick() {
 function renderTest() {
   const { qs, idx, answers } = test;
   const q = qs[idx];
-
   document.getElementById('test-num').textContent = idx + 1;
   document.getElementById('test-bar').style.width = `${((idx + 1) / 45) * 100}%`;
-
+  renderSign(q.sign, 'test-sign');
   const qEl = document.getElementById('test-question');
   qEl.textContent = q.q;
   qEl.classList.remove('fade-up');
   void qEl.offsetWidth;
   qEl.classList.add('fade-up');
-
   document.getElementById('test-options').innerHTML = q.o.map((opt, i) =>
     `<button class="option-btn${answers[idx] === i ? ' selected' : ''}" onclick="testSelect(${i})">${opt}</button>`
   ).join('');
-
   document.getElementById('test-prev').style.visibility = idx === 0 ? 'hidden' : 'visible';
   document.getElementById('test-next').style.display = idx < 44 ? '' : 'none';
   document.getElementById('test-submit').style.display = idx === 44 ? '' : 'none';
-
   renderDots();
 }
 
 function testSelect(i) {
   test.answers[test.idx] = i;
-  document.querySelectorAll('#test-options .option-btn').forEach((b, j) => {
-    b.classList.toggle('selected', j === i);
-  });
+  document.querySelectorAll('#test-options .option-btn').forEach((b, j) => b.classList.toggle('selected', j === i));
   renderDots();
 }
 
@@ -729,71 +766,40 @@ function submitTest() {
   const { qs, answers } = test;
   let correct = 0;
   qs.forEach((q, i) => { if (answers[i] === q.a) correct++; });
-  const total = 45;
+  const total = 45, wrong = total - correct, pct = Math.round((correct / total) * 100);
   const passed = correct >= 38;
-  const wrong = total - correct;
-  const pct = Math.round((correct / total) * 100);
-
   showScreen('results');
-
-  document.getElementById('res-headline').textContent =
-    `Du fikk ${correct} av ${total} riktige`;
-
-  document.getElementById('res-sub').innerHTML =
-    passed
-      ? `<strong style="color:var(--green)">Bestått! 🎉</strong> Du svarte riktig på ${pct}% av spørsmålene. Selve teoriprøven hos Statens vegvesen inneholder 45 spørsmål og du må ha 38 rett for å bestå.`
-      : `<strong style="color:var(--red)">Ikke bestått.</strong> Du trenger ${38 - correct} flere riktige svar for å bestå. Fortsett å øve! Selve teoriprøven krever 38 av 45 riktige.`;
-
-  const barsEl = document.getElementById('res-bars');
-  barsEl.innerHTML = `
-    <div class="score-row">
-      <div class="score-row-top">
-        <span class="score-row-label">${correct} riktige svar</span>
-        <span class="score-row-note">38 for å bestå</span>
-      </div>
-      <div class="score-bar"><div class="score-bar-fill green" style="width:${(correct/45)*100}%"></div></div>
-    </div>
-    <div class="score-row">
-      <div class="score-row-top">
-        <span class="score-row-label">${wrong} feil svar</span>
-        <span class="score-row-note">Maks 7 feil</span>
-      </div>
-      <div class="score-bar"><div class="score-bar-fill red" style="width:${(wrong/45)*100}%"></div></div>
-    </div>`;
-
+  document.getElementById('res-headline').textContent = `Du fikk ${correct} av ${total} riktige`;
+  document.getElementById('res-sub').innerHTML = passed
+    ? `<strong style="color:var(--green)">Bestått! 🎉</strong> Du svarte riktig på ${pct}% av spørsmålene. Selve teoriprøven hos Statens vegvesen inneholder 45 spørsmål og du må ha 38 rett for å bestå.`
+    : `<strong style="color:var(--red)">Ikke bestått.</strong> Du trenger ${38 - correct} flere riktige svar for å bestå. Fortsett å øve! Selve teoriprøven krever 38 av 45 riktige.`;
+  document.getElementById('res-bars').innerHTML = `
+    <div class="score-row"><div class="score-row-top"><span class="score-row-label">${correct} riktige svar</span><span class="score-row-note">38 for å bestå</span></div>
+    <div class="score-bar"><div class="score-bar-fill green" style="width:${(correct/45)*100}%"></div></div></div>
+    <div class="score-row"><div class="score-row-top"><span class="score-row-label">${wrong} feil svar</span><span class="score-row-note">Maks 7 feil</span></div>
+    <div class="score-bar"><div class="score-bar-fill red" style="width:${(wrong/45)*100}%"></div></div></div>`;
   document.getElementById('res-retry').onclick = startFullTest;
-
   const wrongItems = qs.map((q, i) => ({ q, ans: answers[i] })).filter(x => x.ans !== x.q.a);
   const rightItems = qs.map((q, i) => ({ q, ans: answers[i] })).filter(x => x.ans === x.q.a);
-
-  // wrong section
   const ws = document.getElementById('res-wrong-section');
   ws.style.display = wrongItems.length ? '' : 'none';
   document.getElementById('res-wrong-title').textContent = `Oppgaver som er besvart feil (${wrongItems.length})`;
-  document.getElementById('res-wrong-list').innerHTML = wrongItems.map(({q, ans}, idx) =>
-    buildReviewItem(q, ans, `w${idx}`)
-  ).join('');
-
-  // right section
+  document.getElementById('res-wrong-list').innerHTML = wrongItems.map(({q, ans}, i) => buildReviewItem(q, ans, `w${i}`)).join('');
   const rs = document.getElementById('res-right-section');
   rs.style.display = rightItems.length ? '' : 'none';
   document.getElementById('res-right-title').textContent = `Riktig besvarte oppgaver (${rightItems.length})`;
-  document.getElementById('res-right-list').innerHTML = rightItems.map(({q, ans}, idx) =>
-    buildReviewItem(q, ans, `r${idx}`)
-  ).join('');
+  document.getElementById('res-right-list').innerHTML = rightItems.map(({q, ans}, i) => buildReviewItem(q, ans, `r${i}`)).join('');
 }
 
 function buildReviewItem(q, ans, uid) {
   const yourAns = ans !== null ? q.o[ans] : 'Ikke besvart';
-  const rightAns = q.o[q.a];
   return `<div class="wrong-item">
     <button class="wrong-toggle" onclick="toggleWrong('${uid}')">
-      <span class="wrong-toggle-icon">+</span>
-      <span class="wrong-toggle-q">${q.q}</span>
+      <span class="wrong-toggle-icon">+</span><span>${q.q}</span>
     </button>
     <div class="wrong-detail" id="wd-${uid}">
       <div class="wrong-detail-line"><span class="label">Ditt svar:</span><span class="val-wrong">${yourAns}</span></div>
-      <div class="wrong-detail-line"><span class="label">Riktig svar:</span><span class="val-right">${rightAns}</span></div>
+      <div class="wrong-detail-line"><span class="label">Riktig svar:</span><span class="val-right">${q.o[q.a]}</span></div>
       <div class="wrong-exp">${q.e}</div>
     </div>
   </div>`;
@@ -801,14 +807,10 @@ function buildReviewItem(q, ans, uid) {
 
 function toggleWrong(uid) {
   const el = document.getElementById('wd-' + uid);
-  const btn = el.previousElementSibling;
   el.classList.toggle('open');
-  btn.querySelector('.wrong-toggle-icon').textContent = el.classList.contains('open') ? '−' : '+';
+  el.previousElementSibling.querySelector('.wrong-toggle-icon').textContent = el.classList.contains('open') ? '−' : '+';
 }
 
-// ══════════════════════════════════════════════════
-// UTILS
-// ══════════════════════════════════════════════════
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
